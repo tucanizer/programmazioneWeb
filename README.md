@@ -1,24 +1,45 @@
-# Esercizio: My Library 📚
+# 💻 Corso di Programmazione Web
 
-Questo è un progetto didattico per un corso di programmazione web. Si tratta dell'interfaccia frontend per la gestione di una libreria personale, completa di homepage, lista dei libri, dettagli e moduli di inserimento.
+Benvenuto nella mia repository! Questo spazio raccoglie tutti i progetti, gli esercizi e gli appunti sviluppati durante il mio percorso di studio nella programmazione web.
 
-## 🛠️ Tecnologie utilizzate
-- **HTML5** per la struttura delle pagine
-- **CSS3** (Vanilla CSS + Bootstrap) per il layout e lo stile
-- **JavaScript** per l'interattività
-- **XAMPP / PHP** (Predisposizione per il backend)
+L'obiettivo di questa repository è tracciare i miei progressi nello sviluppo frontend e backend, partendo dalle basi fino ad arrivare alla creazione di vere e proprie applicazioni web dinamiche.
 
-## 🚀 Come visualizzare il progetto
+---
 
-Essendo un progetto web, puoi visualizzarlo in diversi modi:
+## 📂 Struttura della Repository (Indice)
 
-1. **Modalità Semplice:** Apri il file `index.html` direttamente nel tuo browser.
-2. **Con VS Code:** Apri la cartella su Visual Studio Code e usa l'estensione *Live Server*.
-3. **Con server locale (Consigliato):** - Sposta l'intera cartella in `C:\xampp\htdocs` (su Windows).
-   - Apri il pannello di controllo di XAMPP e avvia il modulo **Apache**.
-   - Vai sul tuo browser e digita `http://localhost/nome-della-tua-cartella`.
+Qui sotto trovi l'elenco dei vari moduli ed esercizi presenti. Ogni cartella contiene un progetto specifico a sé stante.
 
-## 📂 Struttura del progetto
-- `/css`: Fogli di stile personalizzati e libreria Bootstrap.
-- `/images`: Immagini e loghi.
-- `/pagine`: Sottocartelle contenenti le varie viste (es. lista libri, modifica, elimina).
+* 📁 **[esercizio](./esercizio/)** - *Il mio primo progetto strutturato.* Un'interfaccia frontend per la gestione di una libreria personale ("My Library"). Include layout responsive, menu a tendina, tabelle e l'integrazione del framework Bootstrap.
+* 📁 **[Prossimo Progetto]** - *(In arrivo...)*
+* 📁 **[Prossimo Esercizio]** - *(In arrivo...)*
+
+*(Nota: per i dettagli specifici di ogni progetto, apri la relativa cartella e consulta il suo README interno).*
+
+---
+
+## 🛠️ Tecnologie e Strumenti in fase di studio
+
+Nel corso di questi esercizi sto utilizzando e approfondendo le seguenti tecnologie:
+
+**Frontend:**
+* HTML5 (Struttura semantica)
+* CSS3 (Vanilla CSS e layout)
+* Framework CSS (Bootstrap)
+* JavaScript (Interattività)
+
+**Backend & Strumenti:**
+* PHP (Logica server-side)
+* MySQL / MariaDB (Gestione Database)
+* XAMPP (Ambiente server locale)
+* Git & GitHub (Version control)
+
+---
+
+## 🚀 Come avviare i progetti locali
+
+Poiché molti di questi progetti integrano (o integreranno) logiche backend in PHP, si consiglia di non aprire semplicemente i file HTML nel browser, ma di utilizzare un server locale:
+
+1. Clona questa repository sul tuo computer:
+   ```bash
+   git clone [https://github.com/DiegoG-web/programmazioneWeb.git](https://github.com/DiegoG-web/programmazioneWeb.git)
