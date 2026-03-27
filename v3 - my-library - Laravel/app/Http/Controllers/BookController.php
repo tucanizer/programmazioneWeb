@@ -3,55 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class BookController extends Controller
 {
     public function index(){
-        $books = [
-            [
-                "id" => 1,
-                "title" => "Il nome della rosa",
-                "author" => "Umberto Eco",
-                "genre" => "Thriller",
-                "price" => 20.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ],
-            [
-                "id" => 2,
-                "title" => "Il signore degli anelli",
-                "author" => "J.R.R. Tolkien",
-                "genre" => "Fantasy",
-                "price" => 25.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ],
-            [
-                "id" => 3,
-                "title" => "Il vecchio e il mare",
-                "author" => "Ernest Hemingway",
-                "genre" => "Romanzo",
-                "price" => 15.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ],[
-                "id" => 4,
-                "title" => "Il piccolo principe",
-                "author" => "Antoine de Saint-Exupéry",
-                "genre" => "Fiaba",
-                "price" => 10.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ]
-        ];
+        $books = Book::all();
         return view('books.bookList', ["books"=>$books]);
+
     }
 
     public function details($bookId) {
-        $book = [
-                "id" => 1,
-                "title" => "Il nome della rosa",
-                "author" => "Umberto Eco",
-                "genre" => "Thriller",
-                "price" => 20.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ];
+        $book = Book::find($bookId);
         return view('books.bookDetails', ["book"=>$book]);
     }
 
@@ -66,34 +29,45 @@ class BookController extends Controller
                 "image" => null
             ];
         if($bookId){
-            $book = [
-                "id" => $bookId,
-                "title" => "Il nome della rosa",
-                "author" => "Umberto Eco",
-                "genre" => "Thriller",
-                "price" => 20.00,
-                "image" => "https://images.unsplash.com/photo-1541963463532-d68292c34b19?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicm98ZW58MHx8MHx8fDA%3D"
-            ];
+            $book = Book::find($bookId);
         }
         return redirect()->route('book.index');
-        // return view('books.bookForm', ["book"=>$book]);
     }
 
 
 
     // Input data of the book to create
-    public function createBook(){
+    public function createBook(Request $request){
+        $title = $request->input('title');
+        //$author = $request->input('author');
+        //$genre = $request->input('genre');
+        $price = $request->input('price');
+        $year = $request->input('year');
+
+        $book = new Book();
+        $book->title = $title;
+        //$book->author = $author;
+        //$book->genre = $genre;
+        $book->price = $price;
+        $book->year = $year;
+        $book->save();
+
         return "This function should create the book";
     }
 
     // Input data of the book to edit + $idBook
-    public function editBook(){
+    public function editBook(request $request){
+        $idBook = $request->input('id');
+        $book = Book::findOrFail($idBook);
 
-        return "This function should edit the book";
+
+        return redirect()->route('book.index'); 
     }
 
     public function deleteBook($bookId){
+        $book = Book::findOrFail($bookId);
+        $book->deleteQuietly();
 
-        return "This function should delete the book";
+        return redirect()->route('book.index');
     }
 }
