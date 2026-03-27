@@ -11,7 +11,7 @@ L'obiettivo di questa repository è tracciare i miei progressi nello sviluppo fr
 Qui sotto trovi l'elenco dei vari moduli ed esercizi presenti. Ogni cartella contiene un progetto specifico a sé stante.
 
 * 📁 **[esercizio](./esercizio/)** - *Il mio primo progetto strutturato.* Un'interfaccia frontend per la gestione di una libreria personale ("My Library"). Include layout responsive, menu a tendina, tabelle e l'integrazione del framework Bootstrap.
-* 📁 **[my library v3](./V3 - My Library - Laravel/)** - *Prima implementazione in Laravel della libreria*
+* 📁 **[my library v3](./v3%20-%20my-library%20-%20Laravel/)** - *Prima implementazione in Laravel della libreria*
 * 📁 **[Prossimo Esercizio]** - *(In arrivo...)*
 
 *(Nota: per i dettagli specifici di ogni progetto, apri la relativa cartella e consulta il suo README interno).*
